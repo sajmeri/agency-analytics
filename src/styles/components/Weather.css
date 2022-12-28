@@ -3,7 +3,7 @@
 }
 @media (min-width: 961px) {
   .container {
-    width: 40%;
+    width: 50%;
     margin: auto;
   }
 }
@@ -20,10 +20,24 @@ li a {
   color: gray;
   text-decoration: none;
 }
-.forecast {
-  border: 1px solid red;
-  height: 200px;
-  border-radius: 0.2rem;
+.weather-data {
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem lightgray;
+  height: 500px;
+  border-radius: 0.8rem;
   margin-top: 2rem;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 1.75fr 1.25fr;
+}
+.observations {
+  background-color: aliceblue;
+  margin: 0.3rem;
+}
+.forecast {
+  background-color: aliceblue;
+  margin: 0.3rem;
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 /*# sourceMappingURL=Weather.css.map */
