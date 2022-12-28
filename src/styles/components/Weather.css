@@ -1,0 +1,29 @@
+.container {
+  margin-top: 1rem;
+}
+@media (min-width: 961px) {
+  .container {
+    width: 40%;
+    margin: auto;
+  }
+}
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+li {
+  font: 1.5em sans-serif;
+  font-weight: 100;
+}
+li a {
+  color: gray;
+  text-decoration: none;
+}
+.forecast {
+  border: 1px solid red;
+  height: 200px;
+  border-radius: 0.2rem;
+  margin-top: 2rem;
+}
+/*# sourceMappingURL=Weather.css.map */
