@@ -20,8 +20,8 @@ class Weather extends Component<IProps, IState> {
     };
   }
 
-  getWeatherData = () => {
-    var url = "https://goweather.herokuapp.com/weather/Tokyo";
+  getWeatherData = (city: string) => {
+    var url = `https://goweather.herokuapp.com/weather/${city}`;
 
     fetch(url)
       .then((response) => response.json())
@@ -42,13 +42,13 @@ class Weather extends Component<IProps, IState> {
   };
 
   componentDidMount(): void {
-    this.getWeatherData();
+    this.getWeatherData("ottawa");
   }
 
   render(): ReactNode {
     return (
       <div className="container">
-        <Nav />
+        <Nav handleNavClick={this.getWeatherData} />
         <Forecast />
       </div>
     );
