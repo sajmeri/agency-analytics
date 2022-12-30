@@ -24,6 +24,7 @@
 .observations .obs-details .obs-data {
   text-align: left;
   margin-left: 0.5rem;
+  margin-right: 1rem;
 }
 .observations .obs-details .temperature {
   display: inline;
