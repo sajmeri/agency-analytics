@@ -1,6 +1,7 @@
 import { Component, ReactNode } from "react";
 import Nav from "./Nav";
 import WeatherDetails from "./WeatherDetails";
+import { getWeatherAPIURL } from "../helpers/weatherAPI";
 import "../styles/components/Weather.css";
 
 interface IProps {}
@@ -24,8 +25,7 @@ class Weather extends Component<IProps, IState> {
       error: false,
     });
 
-    var url = `https://goweather.herokuapp.com/weather/${city}`;
-
+    const url = getWeatherAPIURL(city);
     fetch(url)
       .then((response) => {
         if (response.status !== 200) {
@@ -34,9 +34,16 @@ class Weather extends Component<IProps, IState> {
         return response.json();
       })
       .then((weatherData) => {
+        const dataToStore = {
+          obs: {},
+          lterm: {},
+        };
+        dataToStore.obs = weatherData.obs;
+        dataToStore.lterm = weatherData.lterm;
+
         this.setState({
           loading: false,
-          weatherData: weatherData,
+          weatherData: dataToStore,
           error: false,
         });
       })
@@ -55,6 +62,7 @@ class Weather extends Component<IProps, IState> {
 
   render(): ReactNode {
     const { loading, weatherData, error } = this.state;
+    console.log(weatherData);
     return (
       <div className="container">
         <Nav handleNavClick={this.getWeatherData} />
