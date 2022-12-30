@@ -17,6 +17,7 @@ class Observations extends Component<IProps> {
               src={`https://j.theweathernetwork.com/wx_icons/v1/${obsData.wxIcon}.png`}
               width="150"
               height="150"
+              alt={obsData.wxCondition}
             />
           </div>
           <div className="obs-data">

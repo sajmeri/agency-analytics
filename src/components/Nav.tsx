@@ -1,6 +1,6 @@
 import { Component, ReactNode } from "react";
-import "../styles/components/Weather.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import "../styles/components/Nav.css";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 interface IProps {
   handleNavClick: (city: string) => void;
@@ -13,19 +13,37 @@ class Nav extends Component<IProps> {
         <Router>
           <ul>
             <li>
-              <Link to="ottawa" onClick={() => handleNavClick("ottawa")}>
+              <NavLink
+                className={({ isActive }) =>
+                  [isActive ? "active" : null].filter(Boolean).join(" ")
+                }
+                to="ottawa"
+                onClick={() => handleNavClick("ottawa")}
+              >
                 OTTAWA
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="moscow" onClick={() => handleNavClick("moscow")}>
+              <NavLink
+                className={({ isActive }) =>
+                  [isActive ? "active" : null].filter(Boolean).join(" ")
+                }
+                to="moscow"
+                onClick={() => handleNavClick("moscow")}
+              >
                 MOSCOW
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="tokyo" onClick={() => handleNavClick("tokyo")}>
+              <NavLink
+                className={({ isActive }) =>
+                  [isActive ? "active" : null].filter(Boolean).join(" ")
+                }
+                to="tokyo"
+                onClick={() => handleNavClick("tokyo")}
+              >
                 TOKYO
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </Router>
