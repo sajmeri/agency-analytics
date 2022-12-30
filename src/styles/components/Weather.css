@@ -29,10 +29,6 @@ li a {
   display: grid;
   grid-template-rows: 1.75fr 1.25fr;
 }
-.observations {
-  background-color: aliceblue;
-  margin: 0.3rem;
-}
 .forecast {
   background-color: aliceblue;
   margin: 0.3rem;

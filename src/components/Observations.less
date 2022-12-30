@@ -1,0 +1,41 @@
+@import "../variables.less";
+
+.observations{
+    background-color: @background-color;
+    margin: .3rem;
+}
+h2{
+    font-weight: 200;
+}
+.obs-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    @media (min-width:961px) {
+        width: 50%;
+    }
+
+}
+
+.obs-icon {
+    text-align: right;
+    margin-right: .5rem;
+}
+
+.obs-data{
+    text-align: left;
+    margin-left: .5rem;
+}
+
+.temperature {
+    display: inline;
+    font-size: 4rem;
+}
+
+.condition{
+    display: inline;
+    font-size: 2rem;
+    font-weight: 100;
+}

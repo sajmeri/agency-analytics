@@ -23,7 +23,7 @@ export const filterWeatherData = (weatherData: ITWNWeatherData) => {
     const dataToStore:ICityWeatherData = initialWeatherData;
     
       dataToStore.obs.dayName = weatherData.obs.updatetime_stamp_gmt;
-      dataToStore.obs.wxIcon = weatherData.obs.wxca;
+      dataToStore.obs.wxIcon = weatherData.obs.icon;
       dataToStore.obs.wxCondition = weatherData.obs.wxc;
       dataToStore.obs.temperature = weatherData.obs.tc;
       dataToStore.forecast = [];
@@ -38,7 +38,7 @@ export const filterWeatherData = (weatherData: ITWNWeatherData) => {
             temperature: ''
         };
         currentPeriod.dayName = period.super_short_day;
-        currentPeriod.wxIcon = period.itn;
+        currentPeriod.wxIcon = period.ida;
         currentPeriod.temperature = period.tma;
         dataToStore.forecast.push(currentPeriod);
       })

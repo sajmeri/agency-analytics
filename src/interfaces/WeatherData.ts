@@ -1,10 +1,10 @@
 export interface ITWNForecastPeriodData{
     super_short_day: string,
-    itn:string,
+    ida:string,
     tma: string
 }
 export interface ITWNWeatherData{
-    obs: {updatetime_stamp_gmt: string, wxca: string, wxc:string, tc:string},
+    obs: {updatetime_stamp_gmt: string, icon: string, wxc:string, tc:string},
     sevendays: {
         periods: ITWNForecastPeriodData[]
     },

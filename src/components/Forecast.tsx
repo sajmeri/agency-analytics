@@ -8,7 +8,7 @@ interface IProps {
 class Forecast extends Component<IProps> {
   render(): ReactNode {
     const { forecastData } = this.props;
-
+    //https://j.theweathernetwork.com/wx_icons/v1/28.png
     return (
       <div className="forecast">
         <div>1</div>
