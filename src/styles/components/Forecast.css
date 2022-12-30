@@ -1,0 +1,29 @@
+.forecast {
+  background-color: white;
+  margin: 0.3rem;
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.forecast h3 {
+  font-weight: 200;
+  padding: 0;
+  margin: 1rem 0 0.5rem 0;
+}
+.forecast .day-column {
+  background-color: aliceblue;
+  margin: 0.2rem;
+  margin-top: 0;
+  display: inline;
+}
+.forecast .wx-icon {
+  margin: 0;
+  padding: 0;
+}
+.forecast .temperature {
+  display: inline;
+  font-size: 2rem;
+  margin: 0;
+  color: #242323;
+}
+/*# sourceMappingURL=Forecast.css.map */

@@ -1,0 +1,33 @@
+@import "../variables.less";
+.forecast{
+    background-color: white;
+    margin: .3rem;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+    h3{
+        font-weight: 200;
+        padding: 0;
+        margin: 1rem 0 .5rem 0;
+    }
+    .day-column{
+        background-color: @background-color;
+        margin: .2rem;
+        margin-top: 0;
+        display: inline;
+    }
+
+    .wx-icon{
+        margin: 0;
+        padding: 0;
+    }
+    .temperature{
+        display: inline;
+        font-size: 2rem;
+        margin: 0;
+        color: @temperatur-color;
+    }
+
+}

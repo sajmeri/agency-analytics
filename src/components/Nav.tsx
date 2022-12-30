@@ -9,7 +9,7 @@ class Nav extends Component<IProps> {
   render(): ReactNode {
     let { handleNavClick } = this.props;
     return (
-      <div>
+      <div className="nav">
         <Router>
           <ul>
             <li>

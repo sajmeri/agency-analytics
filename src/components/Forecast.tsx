@@ -1,6 +1,6 @@
 import { Component, ReactNode } from "react";
 import { IWeatherData } from "../interfaces/WeatherData";
-import "../styles/components/Weather.css";
+import "../styles/components/Forecast.css";
 
 interface IProps {
   forecastData: IWeatherData[];
@@ -11,10 +11,21 @@ class Forecast extends Component<IProps> {
     //https://j.theweathernetwork.com/wx_icons/v1/28.png
     return (
       <div className="forecast">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
+        {forecastData.map((day) => {
+          return (
+            <div className="day-column">
+              <h3>{day.dayName}</h3>
+              <p className="wx-icon">
+                <img
+                  src={`https://j.theweathernetwork.com/wx_icons/v1/${day.wxIcon}.png`}
+                  width="70"
+                  height="70"
+                />
+              </p>
+              <p className="temperature">{day.temperature}&deg;</p>
+            </div>
+          );
+        })}
       </div>
     );
   }

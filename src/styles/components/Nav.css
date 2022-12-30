@@ -1,17 +1,18 @@
-ul {
-  list-style: none;
+.nav ul {
+  list-style-type: none;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-li {
+.nav li {
   font: 1.5em sans-serif;
   font-weight: 100;
 }
-li a {
+.nav li a {
   color: gray;
   text-decoration: none;
 }
-.active {
+.nav .active {
   font-weight: 900;
   color: #2ab5e3;
 }

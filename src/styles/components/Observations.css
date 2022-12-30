@@ -2,10 +2,10 @@
   background-color: aliceblue;
   margin: 0.3rem;
 }
-h2 {
+.observations h2 {
   font-weight: 200;
 }
-.obs-details {
+.observations .obs-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
@@ -13,23 +13,24 @@ h2 {
   margin: auto;
 }
 @media (min-width: 961px) {
-  .obs-details {
+  .observations .obs-details {
     width: 50%;
   }
 }
-.obs-icon {
+.observations .obs-icon {
   text-align: right;
   margin-right: 0.5rem;
 }
-.obs-data {
+.observations .obs-data {
   text-align: left;
   margin-left: 0.5rem;
 }
-.temperature {
+.observations .temperature {
   display: inline;
   font-size: 4rem;
+  color: #333232;
 }
-.condition {
+.observations .condition {
   display: inline;
   font-size: 2rem;
   font-weight: 100;
