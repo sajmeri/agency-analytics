@@ -11,3 +11,16 @@ export const getWeatherAPIURL = (city:string) => {
       let url = weatherAPI[city as ObjectKey];
       return url;
 }
+
+export const filterWeatherData = (weatherData: {
+    obs: {},
+    lterm: {},
+  }) => {
+    const dataToStore = {
+        obs: {},
+        lterm: {},
+      };
+      dataToStore.obs = weatherData.obs;
+      dataToStore.lterm = weatherData.lterm;
+      return dataToStore;
+}

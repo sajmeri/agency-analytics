@@ -1,7 +1,7 @@
 import { Component, ReactNode } from "react";
 import Nav from "./Nav";
 import WeatherDetails from "./WeatherDetails";
-import { getWeatherAPIURL } from "../helpers/weatherAPI";
+import { getWeatherAPIURL, filterWeatherData } from "../helpers/weatherAPI";
 import "../styles/components/Weather.css";
 
 interface IProps {}
@@ -26,6 +26,7 @@ class Weather extends Component<IProps, IState> {
     });
 
     const url = getWeatherAPIURL(city);
+
     fetch(url)
       .then((response) => {
         if (response.status !== 200) {
@@ -34,13 +35,7 @@ class Weather extends Component<IProps, IState> {
         return response.json();
       })
       .then((weatherData) => {
-        const dataToStore = {
-          obs: {},
-          lterm: {},
-        };
-        dataToStore.obs = weatherData.obs;
-        dataToStore.lterm = weatherData.lterm;
-
+        const dataToStore = filterWeatherData(weatherData);
         this.setState({
           loading: false,
           weatherData: dataToStore,
