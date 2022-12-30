@@ -22,3 +22,9 @@ export interface ICityWeatherData{
     obs: IObsData,
     forecast: IWeatherData[]
 }
+
+export interface IApplicationState {
+    loading: boolean;
+    weatherData: ICityWeatherData;
+    error: boolean;
+  }

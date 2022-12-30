@@ -1,12 +1,13 @@
 import { Component, ReactNode } from "react";
+import { IWeatherData } from "../interfaces/WeatherData";
 import "../styles/components/Weather.css";
 
 interface IProps {
-  weatherData: object;
+  forecastData: IWeatherData[];
 }
 class Forecast extends Component<IProps> {
   render(): ReactNode {
-    const { weatherData } = this.props;
+    const { forecastData } = this.props;
 
     return (
       <div className="forecast">

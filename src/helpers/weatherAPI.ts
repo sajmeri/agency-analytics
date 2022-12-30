@@ -27,7 +27,11 @@ export const filterWeatherData = (weatherData: ITWNWeatherData) => {
       dataToStore.obs.wxCondition = weatherData.obs.wxc;
       dataToStore.obs.temperature = weatherData.obs.tc;
       dataToStore.forecast = [];
-      weatherData.sevendays.periods.forEach((period:ITWNForecastPeriodData)=>{
+
+      //Application needs only 4 day worth of data
+      const fourDayData = weatherData.sevendays.periods.slice(0,4);
+
+      fourDayData.forEach((period:ITWNForecastPeriodData)=>{
         const currentPeriod:IWeatherData = {
             dayName:'',
             wxIcon: '',

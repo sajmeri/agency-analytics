@@ -1,10 +1,11 @@
 import { Component, ReactNode } from "react";
 import Observations from "./Observations";
 import Forecast from "./Forecast";
+import { ICityWeatherData } from "../interfaces/WeatherData";
 import "../styles/components/Weather.css";
 
 interface IProps {
-  weatherData: object;
+  weatherData: ICityWeatherData;
 }
 class WeatherDetails extends Component<IProps> {
   render(): ReactNode {
@@ -12,8 +13,8 @@ class WeatherDetails extends Component<IProps> {
 
     return (
       <div className="weather-data">
-        <Observations weatherData={weatherData} />
-        <Forecast weatherData={weatherData} />
+        <Observations obsData={weatherData.obs} />
+        <Forecast forecastData={weatherData.forecast} />
       </div>
     );
   }

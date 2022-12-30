@@ -6,18 +6,13 @@ import {
   getWeatherAPIURL,
   filterWeatherData,
 } from "../helpers/weatherAPI";
-import { ICityWeatherData } from "../interfaces/WeatherData";
+import { IApplicationState } from "../interfaces/WeatherData";
 
 import "../styles/components/Weather.css";
 
 interface IProps {}
 
-interface IState {
-  loading: boolean;
-  weatherData: ICityWeatherData;
-  error: boolean;
-}
-class Weather extends Component<IProps, IState> {
+class Weather extends Component<IProps, IApplicationState> {
   state = {
     loading: true,
     weatherData: initialWeatherData,
