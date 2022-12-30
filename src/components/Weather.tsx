@@ -58,7 +58,7 @@ class Weather extends Component<IProps, IApplicationState> {
 
   render(): ReactNode {
     const { loading, weatherData, error } = this.state;
-    console.log(weatherData);
+
     return (
       <div className="container">
         <Nav handleNavClick={this.getWeatherData} />

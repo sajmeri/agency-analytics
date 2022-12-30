@@ -1,6 +1,7 @@
 export interface ITWNForecastPeriodData{
     super_short_day: string,
     ida:string,
+    itd: string,
     tma: string
 }
 export interface ITWNWeatherData{
@@ -13,13 +14,11 @@ export interface ITWNWeatherData{
 export interface IWeatherData{
     dayName: string,
     wxIcon: string,
+    wxCondition: string,
     temperature: string
 }
-export interface IObsData extends IWeatherData{
-    wxCondition: string,
-}
 export interface ICityWeatherData{
-    obs: IObsData,
+    obs: IWeatherData,
     forecast: IWeatherData[]
 }
 

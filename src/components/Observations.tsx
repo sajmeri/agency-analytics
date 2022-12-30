@@ -1,9 +1,9 @@
 import { Component, ReactNode } from "react";
-import { IObsData } from "../interfaces/WeatherData";
+import { IWeatherData } from "../interfaces/WeatherData";
 import "../styles/components/Observations.css";
 
 interface IProps {
-  obsData: IObsData;
+  obsData: IWeatherData;
 }
 class Observations extends Component<IProps> {
   render(): ReactNode {

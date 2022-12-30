@@ -2,7 +2,7 @@ import {ITWNForecastPeriodData, ITWNWeatherData, IWeatherData, ICityWeatherData 
 
 export const initialWeatherData = {
     obs: { dayName: "", wxIcon: "", wxCondition: "", temperature: "" },
-    forecast:[ { dayName: "", wxIcon: "", temperature: "" }],
+    forecast:[ { dayName: "", wxIcon: "", wxCondition: "", temperature: "" }],
   };
 
 export const getWeatherAPIURL = (city:string) => {
@@ -35,10 +35,12 @@ export const filterWeatherData = (weatherData: ITWNWeatherData) => {
         const currentPeriod:IWeatherData = {
             dayName:'',
             wxIcon: '',
+            wxCondition: '',
             temperature: ''
         };
         currentPeriod.dayName = period.super_short_day;
         currentPeriod.wxIcon = period.ida;
+        currentPeriod.wxCondition = period.itd;
         currentPeriod.temperature = period.tma;
         dataToStore.forecast.push(currentPeriod);
       })
