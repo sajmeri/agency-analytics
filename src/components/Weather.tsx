@@ -1,27 +1,33 @@
 import { Component, ReactNode } from "react";
 import Nav from "./Nav";
 import WeatherDetails from "./WeatherDetails";
-import { getWeatherAPIURL, filterWeatherData } from "../helpers/weatherAPI";
+import {
+  initialWeatherData,
+  getWeatherAPIURL,
+  filterWeatherData,
+} from "../helpers/weatherAPI";
+import { ICityWeatherData } from "../interfaces/WeatherData";
+
 import "../styles/components/Weather.css";
 
 interface IProps {}
 
 interface IState {
   loading: boolean;
-  weatherData: object;
+  weatherData: ICityWeatherData;
   error: boolean;
 }
 class Weather extends Component<IProps, IState> {
   state = {
     loading: true,
-    weatherData: {},
+    weatherData: initialWeatherData,
     error: false,
   };
 
   getWeatherData = (city: string) => {
     this.setState({
       loading: true,
-      weatherData: {},
+      weatherData: initialWeatherData,
       error: false,
     });
 
@@ -35,17 +41,17 @@ class Weather extends Component<IProps, IState> {
         return response.json();
       })
       .then((weatherData) => {
-        const dataToStore = filterWeatherData(weatherData);
+        const filteredData = filterWeatherData(weatherData);
         this.setState({
           loading: false,
-          weatherData: dataToStore,
+          weatherData: filteredData,
           error: false,
         });
       })
       .catch((error) => {
         this.setState({
           loading: false,
-          weatherData: {},
+          weatherData: initialWeatherData,
           error: true,
         });
       });
