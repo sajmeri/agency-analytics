@@ -19,37 +19,33 @@ class Weather extends Component<IProps, IApplicationState> {
     error: false,
   };
 
-  getWeatherData = (city: string) => {
+  getWeatherData = async (city: string) => {
     this.setState({
       loading: true,
       weatherData: initialWeatherData,
       error: false,
     });
 
-    const url = getWeatherAPIURL(city);
-
-    fetch(url)
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error("Couldn't connect to the server");
-        }
-        return response.json();
-      })
-      .then((weatherData) => {
-        const filteredData = filterWeatherData(weatherData);
-        this.setState({
-          loading: false,
-          weatherData: filteredData,
-          error: false,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          loading: false,
-          weatherData: initialWeatherData,
-          error: true,
-        });
+    try {
+      const url = getWeatherAPIURL(city);
+      const response = await fetch(url);
+      if (response.status !== 200) {
+        throw new Error("Couldn't connect to server!");
+      }
+      const data = await response.json();
+      const filteredData = filterWeatherData(data);
+      this.setState({
+        loading: false,
+        weatherData: filteredData,
+        error: false,
       });
+    } catch (e) {
+      this.setState({
+        loading: false,
+        weatherData: initialWeatherData,
+        error: true,
+      });
+    }
   };
 
   componentDidMount(): void {
