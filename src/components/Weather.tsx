@@ -20,7 +20,6 @@ class Weather extends Component<IProps, IApplicationState> {
   };
 
   getWeatherData = async (city: string) => {
-    console.log("get wx data");
     this.setState({
       loading: true,
       weatherData: initialWeatherData,
@@ -29,9 +28,9 @@ class Weather extends Component<IProps, IApplicationState> {
 
     try {
       const url = getWeatherAPIURL(city);
-      console.log("url", url);
+
       const response = await fetch(url);
-      console.log("response", response);
+
       if (response.status >= 200 && response.status < 300) {
         const data = await response.json();
         const filteredData = filterWeatherData(data);
@@ -58,7 +57,6 @@ class Weather extends Component<IProps, IApplicationState> {
 
   render(): ReactNode {
     const { loading, weatherData, error } = this.state;
-    console.log("initial", this.state);
     return (
       <div className="container">
         <Nav handleNavClick={this.getWeatherData} />
