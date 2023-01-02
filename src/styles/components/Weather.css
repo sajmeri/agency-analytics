@@ -8,7 +8,7 @@
   }
 }
 .weather-data {
-  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem lightgray;
+  box-shadow: 0.2rem 0.2rem 1rem 0.2rem #cbd3d8;
   height: 500px;
   border-radius: 0.8rem;
   margin-top: 2rem;
