@@ -17,7 +17,7 @@ class Nav extends Component<IProps> {
                 className={({ isActive }) =>
                   [isActive ? "active" : null].filter(Boolean).join(" ")
                 }
-                to="ottawa"
+                to="/"
                 onClick={() => handleNavClick("ottawa")}
               >
                 OTTAWA
