@@ -5,20 +5,19 @@ export const initialWeatherData = {
     forecast:[ { dayName: "", wxIcon: "", wxCondition: "", temperature: "" }],
   };
 
+export const WeatherCitiesAndUrls =  {
+  ottawa:
+    "https://www.theweathernetwork.com/api/data/caon0512/cm/ci?ts=1252",
+  moscow:
+    "https://www.theweathernetwork.com/api/data/rsxx0063/cm/ci?ts=1232",
+  tokyo:
+    "https://www.theweathernetwork.com/api/data/jaxx0085/cm/ci?ts=1252",
+}
 export const getWeatherAPIURL = (city:string) => {
-    const weatherAPI = {
-        ottawa:
-          "https://www.theweathernetwork.com/api/data/caon0512/cm/ci?ts=1252",
-        moscow:
-          "https://www.theweathernetwork.com/api/data/rsxx0063/cm/ci?ts=1232",
-        tokyo:
-          "https://www.theweathernetwork.com/api/data/jaxx0085/cm/ci?ts=1252",
-      };
-      type ObjectKey = keyof typeof weatherAPI;
-      let url = weatherAPI[city as ObjectKey];
+      type ObjectKey = keyof typeof WeatherCitiesAndUrls;
+      let url = WeatherCitiesAndUrls[city as ObjectKey];
       return url;
 }
-
 export const filterWeatherData = (weatherData: ITWNWeatherData) => {
     const dataToStore:ICityWeatherData = initialWeatherData;
     
