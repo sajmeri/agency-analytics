@@ -2,7 +2,7 @@ import { Component, ReactNode } from "react";
 import Observations from "./Observations";
 import Forecast from "./Forecast";
 import { ICityWeatherData } from "../interfaces/WeatherData";
-import "../assets/styles/components/Weather.css";
+import "../assets/styles/Weather.css";
 
 interface IProps {
   weatherData: ICityWeatherData;

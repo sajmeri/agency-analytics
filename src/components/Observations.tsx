@@ -1,6 +1,6 @@
 import { Component, ReactNode } from "react";
 import { IWeatherData } from "../interfaces/WeatherData";
-import "../assets/styles/components/Observations.css";
+import "../assets/styles/Observations.css";
 
 interface IProps {
   obsData: IWeatherData;

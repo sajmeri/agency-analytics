@@ -1,5 +1,5 @@
 {
-    "watchFolder": "src/",
+    "watchFolder": "src/assets/less",
     "outputFolder": "src/assets/styles",
     "sourceMap": true,
     "runOnce": false,
