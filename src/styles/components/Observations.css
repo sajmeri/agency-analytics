@@ -3,7 +3,8 @@
   margin: 0.3rem;
 }
 .observations h2 {
-  font-weight: 200;
+  font-weight: 300;
+  color: gray;
 }
 .observations .obs-details {
   display: grid;
