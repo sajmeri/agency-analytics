@@ -8,7 +8,7 @@ import {
 } from "../helpers/weatherAPI";
 import { IApplicationState } from "../interfaces/WeatherData";
 
-import "../styles/components/Weather.css";
+import "../assets/styles/components/Weather.css";
 
 interface IProps {}
 

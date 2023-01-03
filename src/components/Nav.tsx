@@ -1,5 +1,5 @@
 import { Component, ReactNode } from "react";
-import "../styles/components/Nav.css";
+import "../assets/styles/components/Nav.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 interface IProps {

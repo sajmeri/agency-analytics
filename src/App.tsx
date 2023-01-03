@@ -1,6 +1,6 @@
 import { Component, ReactNode } from "react";
 import Weather from "./components/Weather";
-import "./styles/App.css";
+import "./assets/styles/App.css";
 class App extends Component {
   render(): ReactNode {
     return (
